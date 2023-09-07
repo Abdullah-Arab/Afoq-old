@@ -3,6 +3,7 @@ import 'package:Afoq/src/constants/api.dart';
 import 'package:Afoq/src/data/repositories/auth_repository.dart';
 import 'package:Afoq/src/services/api/api_service.dart';
 import 'package:Afoq/src/services/api/append_token_interceptor.dart';
+import 'package:Afoq/src/services/firebase/firebase_sevice.dart';
 import 'package:Afoq/src/services/logger/logger.dart';
 import 'package:Afoq/src/services/storage/storage_service.dart';
 import 'package:get_it/get_it.dart';
@@ -16,6 +17,7 @@ Future<void> configureDependencies() async {
   //await _setupStorage();
   locator.registerSingleton<StorageService>(StorageService());
   locator.registerSingleton<Log>(Log());
+  locator.registerSingleton<FirebaseService>(FirebaseService());
   locator.registerLazySingleton<AuthCubit>(() => AuthCubit());
   
 }

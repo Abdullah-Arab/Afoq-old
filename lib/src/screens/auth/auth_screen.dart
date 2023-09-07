@@ -455,13 +455,7 @@ class _AuthScreenState extends State<AuthScreen> {
     locator<Log>().info("Register button pressed");
     locator<AuthCubit>().register(
         _emailController.text,
-        _passwordController.text,
-        _storeNameController.text,
-        _adminNameController.text,
-        _phone1Controller.text,
-        _phone2Controller.text,
-        _addressController.text,
-        _confirmPasswordController.text);
+        _passwordController.text);
   }
 
   void togglePasswordVisibility() {

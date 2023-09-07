@@ -20,7 +20,7 @@ Auth _$AuthFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Auth {
-  User get user => throw _privateConstructorUsedError;
+  AfoqUser get user => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -33,9 +33,9 @@ abstract class $AuthCopyWith<$Res> {
   factory $AuthCopyWith(Auth value, $Res Function(Auth) then) =
       _$AuthCopyWithImpl<$Res, Auth>;
   @useResult
-  $Res call({User user, String token});
+  $Res call({AfoqUser user, String token});
 
-  $UserCopyWith<$Res> get user;
+  $AfoqUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as AfoqUser,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -68,8 +68,8 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $AfoqUserCopyWith<$Res> get user {
+    return $AfoqUserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -81,10 +81,10 @@ abstract class _$$_AuthCopyWith<$Res> implements $AuthCopyWith<$Res> {
       __$$_AuthCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({User user, String token});
+  $Res call({AfoqUser user, String token});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $AfoqUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class __$$_AuthCopyWithImpl<$Res> extends _$AuthCopyWithImpl<$Res, _$_Auth>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as AfoqUser,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -120,7 +120,7 @@ class _$_Auth implements _Auth {
   factory _$_Auth.fromJson(Map<String, dynamic> json) => _$$_AuthFromJson(json);
 
   @override
-  final User user;
+  final AfoqUser user;
   @override
   final String token;
 
@@ -157,13 +157,13 @@ class _$_Auth implements _Auth {
 }
 
 abstract class _Auth implements Auth {
-  const factory _Auth({required final User user, required final String token}) =
-      _$_Auth;
+  const factory _Auth(
+      {required final AfoqUser user, required final String token}) = _$_Auth;
 
   factory _Auth.fromJson(Map<String, dynamic> json) = _$_Auth.fromJson;
 
   @override
-  User get user;
+  AfoqUser get user;
   @override
   String get token;
   @override

@@ -14,42 +14,35 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+AfoqUser _$AfoqUserFromJson(Map<String, dynamic> json) {
+  return _AfoqUser.fromJson(json);
 }
 
 /// @nodoc
-mixin _$User {
-  int get id => throw _privateConstructorUsedError;
+mixin _$AfoqUser {
+  String get uid => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get ownerName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $AfoqUserCopyWith<AfoqUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res, User>;
+abstract class $AfoqUserCopyWith<$Res> {
+  factory $AfoqUserCopyWith(AfoqUser value, $Res Function(AfoqUser) then) =
+      _$AfoqUserCopyWithImpl<$Res, AfoqUser>;
   @useResult
-  $Res call(
-      {int id,
-      String name,
-      String ownerName,
-      String email,
-      String phone,
-      String address});
+  $Res call({String uid, String name, String email, String phone});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User>
-    implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$AfoqUserCopyWithImpl<$Res, $Val extends AfoqUser>
+    implements $AfoqUserCopyWith<$Res> {
+  _$AfoqUserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -59,25 +52,19 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? uid = null,
     Object? name = null,
-    Object? ownerName = null,
     Object? email = null,
     Object? phone = null,
-    Object? address = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      ownerName: null == ownerName
-          ? _value.ownerName
-          : ownerName // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -86,58 +73,45 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$_AfoqUserCopyWith<$Res> implements $AfoqUserCopyWith<$Res> {
+  factory _$$_AfoqUserCopyWith(
+          _$_AfoqUser value, $Res Function(_$_AfoqUser) then) =
+      __$$_AfoqUserCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String name,
-      String ownerName,
-      String email,
-      String phone,
-      String address});
+  $Res call({String uid, String name, String email, String phone});
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
+class __$$_AfoqUserCopyWithImpl<$Res>
+    extends _$AfoqUserCopyWithImpl<$Res, _$_AfoqUser>
+    implements _$$_AfoqUserCopyWith<$Res> {
+  __$$_AfoqUserCopyWithImpl(
+      _$_AfoqUser _value, $Res Function(_$_AfoqUser) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? uid = null,
     Object? name = null,
-    Object? ownerName = null,
     Object? email = null,
     Object? phone = null,
-    Object? address = null,
   }) {
-    return _then(_$_User(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
+    return _then(_$_AfoqUser(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      ownerName: null == ownerName
-          ? _value.ownerName
-          : ownerName // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -146,10 +120,6 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
       phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -157,92 +127,78 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  const _$_User(
-      {required this.id,
+class _$_AfoqUser implements _AfoqUser {
+  const _$_AfoqUser(
+      {required this.uid,
       required this.name,
-      required this.ownerName,
       required this.email,
-      required this.phone,
-      required this.address});
+      required this.phone});
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$_AfoqUser.fromJson(Map<String, dynamic> json) =>
+      _$$_AfoqUserFromJson(json);
 
   @override
-  final int id;
+  final String uid;
   @override
   final String name;
-  @override
-  final String ownerName;
   @override
   final String email;
   @override
   final String phone;
-  @override
-  final String address;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, ownerName: $ownerName, email: $email, phone: $phone, address: $address)';
+    return 'AfoqUser(uid: $uid, name: $name, email: $email, phone: $phone)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
-            (identical(other.id, id) || other.id == id) &&
+            other is _$_AfoqUser &&
+            (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.ownerName, ownerName) ||
-                other.ownerName == ownerName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.address, address) || other.address == address));
+            (identical(other.phone, phone) || other.phone == phone));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, ownerName, email, phone, address);
+  int get hashCode => Object.hash(runtimeType, uid, name, email, phone);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$_AfoqUserCopyWith<_$_AfoqUser> get copyWith =>
+      __$$_AfoqUserCopyWithImpl<_$_AfoqUser>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(
+    return _$$_AfoqUserToJson(
       this,
     );
   }
 }
 
-abstract class _User implements User {
-  const factory _User(
-      {required final int id,
+abstract class _AfoqUser implements AfoqUser {
+  const factory _AfoqUser(
+      {required final String uid,
       required final String name,
-      required final String ownerName,
       required final String email,
-      required final String phone,
-      required final String address}) = _$_User;
+      required final String phone}) = _$_AfoqUser;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _AfoqUser.fromJson(Map<String, dynamic> json) = _$_AfoqUser.fromJson;
 
   @override
-  int get id;
+  String get uid;
   @override
   String get name;
-  @override
-  String get ownerName;
   @override
   String get email;
   @override
   String get phone;
   @override
-  String get address;
-  @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$_AfoqUserCopyWith<_$_AfoqUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }

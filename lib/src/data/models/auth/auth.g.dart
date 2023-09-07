@@ -7,7 +7,7 @@ part of 'auth.dart';
 // **************************************************************************
 
 _$_Auth _$$_AuthFromJson(Map<String, dynamic> json) => _$_Auth(
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: AfoqUser.fromJson(json['user'] as Map<String, dynamic>),
       token: json['token'] as String,
     );
 
