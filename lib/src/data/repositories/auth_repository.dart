@@ -4,6 +4,7 @@ import 'package:Afoq/src/data/models/auth/auth.dart';
 import 'package:Afoq/src/data/models/auth/user.dart';
 import 'package:Afoq/src/services/api/api_service.dart';
 import 'package:Afoq/src/services/firebase/firebase_sevice.dart';
+import 'package:Afoq/src/services/logger/logger.dart';
 import 'package:Afoq/src/services/service_locator/locator.dart';
 import 'package:Afoq/src/services/storage/storage_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -34,7 +35,13 @@ class AuthRepository {
   }
 
   Future<Auth> register(String email, String password) async {
-    final _userCredential = await _firebaseService.register(email, password);
+    final UserCredential? _userCredential =
+        await _firebaseService.register(email, password);
+    locator<Log>().fatal(_userCredential);
+    if (_userCredential == null) {
+      throw 'non';
+    }
+
     final Auth auth = Auth(
       user: AfoqUser(
         email: _userCredential!.user!.email!,

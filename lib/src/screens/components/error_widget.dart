@@ -14,27 +14,24 @@ class CustomErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: primaryGradient,
+      ),
       child: Padding(
         padding: padding32,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              "assets/images/error.png",
-              fit: BoxFit.cover,
-              width: MediaQuery.of(context).size.width * 0.5,
-            ),
-            gap32,
-            Text(
-              message.statusCode,
-              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                    color: primaryColor,
-                  ),
-              textAlign: TextAlign.center,
-            ),
-            gap16,
+            // Text(
+            //   message.statusCode,
+            //   style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+            //         color: primaryColor,
+            //       ),
+            //   textAlign: TextAlign.center,
+            // ),
+            // gap16,
             Text(
               AppLocalizations.of(context)!.error,
               style: Theme.of(context).textTheme.headlineLarge!.copyWith(

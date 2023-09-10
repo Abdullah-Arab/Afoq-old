@@ -48,6 +48,7 @@ class _AppState extends State<App> {
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
       debugShowCheckedModeBanner: false,
       theme: primaryTheme,
+      themeMode: ThemeMode.dark,
     );
   }
 }

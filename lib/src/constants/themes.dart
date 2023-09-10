@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
- const MaterialColor primaryColor = MaterialColor(_primaryColorPrimaryValue, <int, Color>{
+
+const MaterialColor primaryColor =
+    MaterialColor(_primaryColorPrimaryValue, <int, Color>{
   50: Color(0xFFE6F6FF),
   100: Color(0xFFC1EAFF),
   200: Color(0xFF97DCFF),
@@ -12,15 +14,16 @@ import 'package:google_fonts/google_fonts.dart';
   800: Color(0xFF1DA0FF),
   900: Color(0xFF1291FF),
 });
- const int _primaryColorPrimaryValue = 0xFF2FB8FF;
+const int _primaryColorPrimaryValue = 0xFF2FB8FF;
 
- const MaterialColor mcgpalette0Accent = MaterialColor(_primaryColorAccentValue, <int, Color>{
+const MaterialColor mcgpalette0Accent =
+    MaterialColor(_primaryColorAccentValue, <int, Color>{
   100: Color(0xFFFFFFFF),
   200: Color(_primaryColorAccentValue),
   400: Color(0xFFC6E3FF),
   700: Color(0xFFADD6FF),
 });
- const int _primaryColorAccentValue = 0xFFF9FCFF;
+const int _primaryColorAccentValue = 0xFFF9FCFF;
 
 ThemeData primaryTheme = ThemeData(
   //useMaterial3: true,
@@ -41,6 +44,17 @@ ThemeData primaryTheme = ThemeData(
       height: 1.5,
     ),
   ),
+  textTheme: const TextTheme(
+    bodyLarge: TextStyle(
+      color: Color(0xFFffffff),
+    ),
+    headlineSmall: TextStyle(
+      color: Color(0xFFffffff),
+    ),
+    bodySmall: TextStyle(
+      color: Color.fromARGB(255, 200, 200, 200),
+    ),
+  ),
   filledButtonTheme: FilledButtonThemeData(
     style: ButtonStyle(
       shape: MaterialStateProperty.all(
@@ -48,6 +62,7 @@ ThemeData primaryTheme = ThemeData(
           borderRadius: BorderRadius.circular(12),
         ),
       ),
+      foregroundColor: MaterialStateColor.resolveWith((states) => Colors.white),
     ),
   ),
 
@@ -75,14 +90,13 @@ const RadialGradient primaryGradient = RadialGradient(
   center: Alignment(-1.0, -1.0),
   radius: 2.5,
   colors: <Color>[
-    Color(0xFFC83D39),
-    Color(0xFF8E1913),
+    Color.fromARGB(255, 0, 0, 0),
+    Color.fromARGB(255, 65, 65, 65),
   ],
   stops: <double>[0.0, 1.0],
 );
 
 const roundedRectangleFromTop = ShapeDecoration(
-  color: Colors.white,
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.only(
       topLeft: Radius.circular(32),

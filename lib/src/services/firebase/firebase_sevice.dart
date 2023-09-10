@@ -5,13 +5,13 @@ class FirebaseService {
 
   // Register a new user with email and password
   Future<UserCredential?> register(String email, String password) async {
+    UserCredential userCredential;
     try {
-      UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
+      userCredential = await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
-        
       );
+      print(userCredential);
       return userCredential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

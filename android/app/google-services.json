@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "583941070124",
-    "project_id": "afoq-30638",
-    "storage_bucket": "afoq-30638.appspot.com"
+    "project_number": "955979991474",
+    "project_id": "afoq-d0eb9",
+    "storage_bucket": "afoq-d0eb9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:583941070124:android:5e429ca7aa482b99aea089",
+        "mobilesdk_app_id": "1:955979991474:android:e23bbd4c829f06f1527cab",
         "android_client_info": {
           "package_name": "ly.afoq.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "583941070124-uqq68am2uq5iq1gmdo345arikcom16nm.apps.googleusercontent.com",
+          "client_id": "955979991474-coe31r3s5shnoabui8l34je5lr4k8k4j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBca2WKVqD2Vi2odYLdEuBKPFouxFGJsqc"
+          "current_key": "AIzaSyBQP1oJBv5TBH0mz3vhM-iHX9v2x1T7yj8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "583941070124-uqq68am2uq5iq1gmdo345arikcom16nm.apps.googleusercontent.com",
+              "client_id": "955979991474-coe31r3s5shnoabui8l34je5lr4k8k4j.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

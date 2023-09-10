@@ -11,9 +11,17 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   //NotificationService.init();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      
+    ),
+  );
 
   await Firebase.initializeApp(
+    name: "Afoq",
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
