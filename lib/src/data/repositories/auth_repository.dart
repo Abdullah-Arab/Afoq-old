@@ -17,14 +17,18 @@ class AuthRepository {
 
   Future<Auth> login(String email, String password) async {
     final _userCredential = await _firebaseService.login(email, password);
-    final Auth auth = Auth(
+    locator<Log>().fatal(_userCredential);
+    if (_userCredential == null) {
+      throw Exception('User not found');
+    }
+     final Auth auth = Auth(
       user: AfoqUser(
-        email: _userCredential!.user!.email!,
-        name: _userCredential.user!.displayName!,
-        phone: _userCredential.user!.phoneNumber!,
+        email: _userCredential.user!.email!,
+        name: _userCredential.user!.displayName,
+        phone: _userCredential.user!.phoneNumber,
         uid: _userCredential.user!.uid,
       ),
-      token: _userCredential.credential!.accessToken.toString(),
+      token: _userCredential.user!.refreshToken.toString(),
     );
 
     await locator<StorageService>().setString(
@@ -39,17 +43,17 @@ class AuthRepository {
         await _firebaseService.register(email, password);
     locator<Log>().fatal(_userCredential);
     if (_userCredential == null) {
-      throw 'non';
+      throw Exception('User not created');
     }
 
     final Auth auth = Auth(
       user: AfoqUser(
-        email: _userCredential!.user!.email!,
-        name: _userCredential.user!.displayName!,
-        phone: _userCredential.user!.phoneNumber!,
+        email: _userCredential.user!.email!,
+        name: _userCredential.user!.displayName,
+        phone: _userCredential.user!.phoneNumber,
         uid: _userCredential.user!.uid,
       ),
-      token: _userCredential.credential!.accessToken.toString(),
+      token: _userCredential.user!.refreshToken.toString(),
     );
 
     await locator<StorageService>().setString(

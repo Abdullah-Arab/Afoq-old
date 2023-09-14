@@ -8,9 +8,9 @@ part 'user.g.dart';
 class AfoqUser with _$AfoqUser{
   const factory AfoqUser({
     required String uid,
-    required String name,
+    required String? name,
     required String email,
-    required String phone,
+    required String? phone,
 
   }) = _AfoqUser;
 

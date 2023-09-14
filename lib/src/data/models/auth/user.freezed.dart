@@ -21,9 +21,9 @@ AfoqUser _$AfoqUserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AfoqUser {
   String get uid => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get phone => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $AfoqUserCopyWith<$Res> {
   factory $AfoqUserCopyWith(AfoqUser value, $Res Function(AfoqUser) then) =
       _$AfoqUserCopyWithImpl<$Res, AfoqUser>;
   @useResult
-  $Res call({String uid, String name, String email, String phone});
+  $Res call({String uid, String? name, String email, String? phone});
 }
 
 /// @nodoc
@@ -53,27 +53,27 @@ class _$AfoqUserCopyWithImpl<$Res, $Val extends AfoqUser>
   @override
   $Res call({
     Object? uid = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? email = null,
-    Object? phone = null,
+    Object? phone = freezed,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
+      phone: freezed == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -85,7 +85,7 @@ abstract class _$$_AfoqUserCopyWith<$Res> implements $AfoqUserCopyWith<$Res> {
       __$$_AfoqUserCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uid, String name, String email, String phone});
+  $Res call({String uid, String? name, String email, String? phone});
 }
 
 /// @nodoc
@@ -100,27 +100,27 @@ class __$$_AfoqUserCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = null,
-    Object? name = null,
+    Object? name = freezed,
     Object? email = null,
-    Object? phone = null,
+    Object? phone = freezed,
   }) {
     return _then(_$_AfoqUser(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
+      phone: freezed == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -140,11 +140,11 @@ class _$_AfoqUser implements _AfoqUser {
   @override
   final String uid;
   @override
-  final String name;
+  final String? name;
   @override
   final String email;
   @override
-  final String phone;
+  final String? phone;
 
   @override
   String toString() {
@@ -183,20 +183,20 @@ class _$_AfoqUser implements _AfoqUser {
 abstract class _AfoqUser implements AfoqUser {
   const factory _AfoqUser(
       {required final String uid,
-      required final String name,
+      required final String? name,
       required final String email,
-      required final String phone}) = _$_AfoqUser;
+      required final String? phone}) = _$_AfoqUser;
 
   factory _AfoqUser.fromJson(Map<String, dynamic> json) = _$_AfoqUser.fromJson;
 
   @override
   String get uid;
   @override
-  String get name;
+  String? get name;
   @override
   String get email;
   @override
-  String get phone;
+  String? get phone;
   @override
   @JsonKey(ignore: true)
   _$$_AfoqUserCopyWith<_$_AfoqUser> get copyWith =>

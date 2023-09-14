@@ -1,3 +1,5 @@
+import 'package:Afoq/src/services/logger/logger.dart';
+import 'package:Afoq/src/services/service_locator/locator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseService {
@@ -6,21 +8,32 @@ class FirebaseService {
   // Register a new user with email and password
   Future<UserCredential?> register(String email, String password) async {
     UserCredential userCredential;
+    locator<Log>().info('email $email, password $password');
+
     try {
-      userCredential = await _auth.createUserWithEmailAndPassword(
+      userCredential = await _auth
+          .createUserWithEmailAndPassword(
         email: email,
         password: password,
-      );
-      print(userCredential);
+      )
+          .onError((error, stackTrace) {
+        locator<Log>().fatal(error.toString());
+        locator<Log>().fatal(stackTrace.toString());
+        throw Exception(error.toString());
+      });
+      locator<Log>().info('User created $userCredential');
+      // print(userCredential);
       return userCredential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        //   print('The password provided is too weak.');
+        throw Exception('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+        //  print('The account already exists for that email.');
+        throw Exception('The account already exists for that email.');
       }
     } catch (e) {
-      rethrow;
+      throw Exception(e);
     }
   }
 

@@ -21,7 +21,6 @@ void main() async {
   );
 
   await Firebase.initializeApp(
-    name: "Afoq",
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
