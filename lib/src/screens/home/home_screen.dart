@@ -4,6 +4,7 @@ import 'package:Afoq/src/constants/themes.dart';
 import 'package:Afoq/src/screens/auth/auth_screen.dart';
 import 'package:Afoq/src/screens/components/error_widget.dart';
 import 'package:Afoq/src/screens/components/loading_widget.dart';
+import 'package:Afoq/src/screens/landing/landing_screen.dart';
 import 'package:Afoq/src/services/service_locator/locator.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +22,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final List<Widget> _pages = const [
-    Text("home"),
-    Text("Profiel")
-    
+    LandingScreen(),
+    Text("Profiel"),
   ];
   int _currentIndex = 0;
   void changeIndex(int index) {
@@ -44,8 +44,11 @@ class _HomeScreenState extends State<HomeScreen> {
           authenticated: (state) {
             return Scaffold(
               key: _scaffoldKey,
-              backgroundColor: Theme.of(context).canvasColor,
-              body: _pages[_currentIndex],
+              body: Container(
+                  decoration: const BoxDecoration(
+                    gradient: primaryGradient,
+                  ),
+                  child: _pages[_currentIndex]),
             );
           },
           error: (value) {

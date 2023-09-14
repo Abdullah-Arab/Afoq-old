@@ -1,5 +1,6 @@
 import 'package:Afoq/src/screens/auth/auth_screen.dart';
 import 'package:Afoq/src/screens/home/home_screen.dart';
+import 'package:Afoq/src/screens/landing/landing_screen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
